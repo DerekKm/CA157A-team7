@@ -9,7 +9,7 @@ public class DatabaseCon {
     private static final String user = "root";
 
     //enter password here (can change this to accept an environment variable later)
-    private static final String password = "password";
+    private static final String password = System.getenv("MySQLPassword");
     
     public static Connection getConnection()
             throws SQLException, ClassNotFoundException {
@@ -17,15 +17,14 @@ public class DatabaseCon {
     	java.sql.Connection con;
 
         //Load MySQL JDBC driver
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         //Connect to MySQL Server (simply checks connection to mysql server doesnt open a database yet)
         con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/?autoReconnect=true&useSSL=false",
+            "jdbc:mysql://localhost:3306/SamePage?autoReconnect=true&useSSL=false",
             user,
             password
         );
-
         System.out.println(
             db + " MySQL server connection successfully opened."
         );
