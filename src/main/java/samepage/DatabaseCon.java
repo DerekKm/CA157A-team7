@@ -21,7 +21,7 @@ public class DatabaseCon {
 
         //Connect to MySQL Server (simply checks connection to mysql server doesnt open a database yet)
         con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/SamePage?autoReconnect=true&useSSL=false",
+            "jdbc:mysql://localhost:3306/samepage?autoReconnect=true&useSSL=false",
             user,
             password
         );
