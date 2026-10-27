@@ -1,10 +1,12 @@
 package samepage;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
 
+@WebServlet("/tracks/remove")
 public class RemoveMediaServlet
         extends HttpServlet {
 
@@ -20,7 +22,9 @@ public class RemoveMediaServlet
         if (session == null ||
                 session.getAttribute("user_id") == null) {
 
-            response.sendRedirect("login");
+        	response.sendRedirect(
+        		    request.getContextPath() + "/login"
+        		);
             return;
         }
 
@@ -35,6 +39,8 @@ public class RemoveMediaServlet
 
         dao.removeMedia(userId, mediaId);
 
-        response.sendRedirect("my-list");
+        response.sendRedirect(
+        	    request.getContextPath() + "/my-list"
+        	);
     }
 }

@@ -1,11 +1,13 @@
 package samepage;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet("/my-list")
 public class MyListServlet extends HttpServlet {
 
     @Override
