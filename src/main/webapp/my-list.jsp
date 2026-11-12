@@ -225,6 +225,7 @@
                 <a href="<%= ctx %>/media">Browse</a>
                 <a href="<%= ctx %>/index.jsp#featured">
                     Featured
+                <a href="<%= ctx %>/groups">Groups</a> 
                 </a>
             </nav>
 

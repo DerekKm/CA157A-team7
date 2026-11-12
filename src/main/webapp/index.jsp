@@ -42,7 +42,8 @@
                 <a href="<%= ctx %>/index.jsp">Home</a>
                 <a href="<%= ctx %>/media">Browse</a>
                 <a href="#featured">Featured</a>
-                <a href="#how-it-works">About</a>
+                <a href="<%= ctx %>/groups">Groups</a>     
+                <a href="#how-it-works">About</a>            
             </nav>
 
             <div class="sp-account">
