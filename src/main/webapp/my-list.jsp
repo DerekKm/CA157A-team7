@@ -221,11 +221,12 @@
             </a>
 
             <nav class="sp-links">
-                <a href="<%= ctx %>/index.jsp">Home</a>
-                <a href="<%= ctx %>/media">Browse</a>
-                <a href="<%= ctx %>/index.jsp#featured">
-                    Featured
-                <a href="<%= ctx %>/groups">Groups</a> 
+            
+				<a href="<%= ctx %>/index.jsp">Home</a>
+				<a href="<%= ctx %>/media">Browse</a>
+				<a href="<%= ctx %>/index.jsp#featured">Featured</a>
+				<a href="<%= ctx %>/groups">Groups</a>
+             
                 </a>
             </nav>
 
