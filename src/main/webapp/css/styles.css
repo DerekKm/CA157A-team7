@@ -784,4 +784,99 @@ body.sp-page {
     .sp-auth-card {
         padding: 25px;
     }
+
+    /* FRIENDS PAGE */
+
+.sp-friends-page {
+    padding: 60px 0;
+    min-height: calc(100vh - 76px);
+}
+
+.sp-friends-header {
+    margin-bottom: 40px;
+}
+
+.sp-friends-header h1 {
+    font-size: 42px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.sp-friends-header p {
+    color: var(--muted);
+}
+
+.sp-friends-section {
+    margin-bottom: 50px;
+}
+
+.sp-friends-section h2 {
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+.sp-friends-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.sp-friend-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.sp-friend-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-friend-name {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sp-friend-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.sp-friend-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sp-btn-danger {
+    background: #c94f5c;
+    color: white !important;
+}
+
+.sp-btn-danger:hover {
+    background: #d76470;
+}
+
+.sp-btn-success {
+    background: #63c88b;
+    color: #091120 !important;
+}
+
+.sp-btn-success:hover {
+    background: #7ad69d;
+}
+
+.sp-empty {
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+}
 }
