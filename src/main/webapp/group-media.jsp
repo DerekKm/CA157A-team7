@@ -507,50 +507,6 @@
         </div>
     </footer>
 
-    <!-- SIMPLE CLIENT-SIDE MEDIA SEARCH -->
-    <script>
-        const searchInput =
-            document.getElementById("mediaSearch");
-
-        if (searchInput) {
-            const results =
-                document.querySelectorAll(".gm-result");
-
-            const searchCount =
-                document.getElementById("searchCount");
-
-            const noResults =
-                document.getElementById("noSearchResults");
-
-            searchInput.addEventListener("input", function() {
-
-                const query =
-                    searchInput.value.trim().toLowerCase();
-
-                let visibleCount = 0;
-
-                results.forEach(function(item) {
-
-                    const text =
-                        item.getAttribute("data-search")
-                            .toLowerCase();
-
-                    const matches = text.includes(query);
-
-                    item.hidden = !matches;
-
-                    if (matches) {
-                        visibleCount++;
-                    }
-                });
-
-                searchCount.textContent =
-                    visibleCount + " titles found";
-
-                noResults.hidden = visibleCount > 0;
-            });
-        }
-    </script>
 
 </body>
 </html>
