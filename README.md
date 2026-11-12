@@ -10,6 +10,12 @@
 
 5. Progress Tracking: Users will be able to update and retrieve their current progress for the media they are watching or reading. For example, a user watching a TV show can update what episode they are currently on, while someone reading a book can update their current chapter. This progress will be stored with the user’s media information and can be updated as they continue watching or reading. This is one of the main functions of SamePage because it allows both the user and their group members to know exactly how far they have gotten.
 
+6. Group Creation: Users will be able to create and delete shared media groups/clubs.
+
+7. Group Progress: Groups will be able to maintain their own shared media list containing shows, movies, books, or other media. Authorized members will be able to add/remove media from their group lists. 
+
+8. Friendship - work in progress.
+
 Demo Account Username: derek01
 
 Demo Account Password: demotest
