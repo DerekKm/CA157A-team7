@@ -1,39 +1,25 @@
 package samepage;
 
-import java.io.IOException;
+import java.sql.SQLException;
 
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
-
 
 @WebServlet("/acceptFriendRequest")
 public class AcceptFriendRequestServlet
-        extends HttpServlet {
+        extends FriendActionServlet {
 
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
-            throws IOException {
+    private static final long serialVersionUID = 1L;
 
-        int requesterId =
-            Integer.parseInt(
-                request.getParameter("requesterId")
-            );
+    @Override
+    protected String run(int actorId, int targetId)
+            throws SQLException, ClassNotFoundException {
 
-        int myId =
-            (Integer) request.getSession()
-                             .getAttribute("userId");
+        // The signed-in user is the addressee of the
+        // request and the target user sent it.
+        boolean accepted =
+            new FriendshipDAO()
+                .acceptRequest(targetId, actorId);
 
-        FriendshipDAO dao =
-            new FriendshipDAO();
-
-        dao.acceptRequest(
-            requesterId,
-            myId
-        );
-
-        response.sendRedirect("friends");
+        return accepted ? "accepted" : "missing";
     }
 }
