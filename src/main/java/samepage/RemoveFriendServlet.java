@@ -1,38 +1,23 @@
 package samepage;
 
-import java.io.IOException;
+import java.sql.SQLException;
 
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
 
 @WebServlet("/removeFriend")
 public class RemoveFriendServlet
-        extends HttpServlet {
+        extends FriendActionServlet {
 
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
-            throws IOException {
+    private static final long serialVersionUID = 1L;
 
-        int friendId =
-            Integer.parseInt(
-                request.getParameter("friendId")
-            );
+    @Override
+    protected String run(int actorId, int targetId)
+            throws SQLException, ClassNotFoundException {
 
-        int userId =
-            (Integer) request.getSession()
-                             .getAttribute("userId");
+        boolean removed =
+            new FriendshipDAO()
+                .removeFriend(actorId, targetId);
 
-        FriendshipDAO dao =
-            new FriendshipDAO();
-
-        dao.removeFriend(
-            userId,
-            friendId
-        );
-
-        response.sendRedirect("friends");
+        return removed ? "removed" : "missing";
     }
 }
